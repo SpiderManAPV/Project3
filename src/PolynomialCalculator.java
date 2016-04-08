@@ -15,12 +15,16 @@ public class PolynomialCalculator {
 		String file = args[0];
 		System.out.println(file);
 		try {
-			Scanner polyFile = new Scanner(new File(args[0]));
+			Scanner polyFile = new Scanner(new File(file));
+			while(polyFile.hasNext()) {
+				String line = polyFile.nextLine();
+				for(int i = 0; i < line.length(); i++) {
 
+				}
+			}
 		} catch (FileNotFoundException e) {
 			System.out.println("The file is not found.");
 			System.out.println("Please enter a valid file name and try again.");
 		}
-
 	}
 }
