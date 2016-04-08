@@ -5,14 +5,18 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class PolynomialCalculator {
+	private static LinkedList poly1;
+	private static LinkedList poly2;
 	public static void main(String[] args) {
 		String file = args[0];
 		System.out.println(file);
 		try {
 			Scanner polyFile = new Scanner(new File(args[0]));
+
 		} catch (FileNotFoundException e) {
 			System.out.println("The file is not found.");
 			System.out.println("Please enter a valid file name and try again.");
