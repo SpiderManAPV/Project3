@@ -3,6 +3,8 @@
 // Project 3
 // Polynomial Calculator
 
+import sun.awt.image.ImageWatched;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
@@ -19,9 +21,9 @@ public class PolynomialCalculator {
 		readFile(file);
 		//System.out.println(poly1);
 		//System.out.println(poly2);
-		System.out.println(printPoly(poly1));
-		System.out.println(printPoly(poly2));
-		addition();
+		System.out.println("Polynomial 1: "+printPoly(poly1));
+		System.out.println("Polynomial 2: "+printPoly(poly2));
+		System.out.println("Sum: "+printPoly(addition(poly1, poly2)));
 	}
 	private static void readFile(String fileName) {
 		try {
@@ -41,7 +43,7 @@ public class PolynomialCalculator {
 					} else if(line1.charAt(i) == '-') {
 						isNeg = true;
 					} else if(line1.charAt(i) == ' ') {
-						if(isNeg == true) {
+						if(isNeg) {
 							num= num*-1;
 						}
 						poly1.add(count, num);
@@ -50,6 +52,9 @@ public class PolynomialCalculator {
 					}
 					//System.out.println(poly1);
 				}
+				if(poly1.size()%2 != 0) {
+					poly1.add(poly1.size()+1, 1);
+				}
 				for(int i = line2.length()-1; i>=0; i--) {
 					if(Character.isDigit(line2.charAt(i))) {
 						num*=10;
@@ -57,7 +62,7 @@ public class PolynomialCalculator {
 					} else if(line2.charAt(i) == '-') {
 						isNeg = true;
 					} else if(line2.charAt(i) == ' ') {
-						if(isNeg == true) {
+						if(isNeg) {
 							num= num*-1;
 						}
 						poly2.add(count, num);
@@ -65,6 +70,9 @@ public class PolynomialCalculator {
 						isNeg = false;
 					}
 					//System.out.println(poly2);
+				}
+				if(poly2.size()%2 != 0) {
+					poly2.add(poly2.size()+1, 1);
 				}
 			}
 		} catch (FileNotFoundException e) {
@@ -91,7 +99,50 @@ public class PolynomialCalculator {
 		}
 		return printer.toString();
 	}
-	private static void addition() {
-		//int[] exp = new int[]
+	private static LinkedList addition(LinkedList list1, LinkedList list2) {
+		LinkedList sum = new LinkedList();
+		int[] exp1 = new int[list1.size()/2];
+		int[] coef1 = new int[list1.size()/2];
+		int[] exp2 = new int[list2.size()/2];
+		int[] coef2 = new int[list2.size()/2];
+		//<editor-fold desc="For loops to fill arrays">
+		for(int i = 0; i < coef1.length; i++) {
+			coef1[i] = Integer.parseInt(list1.get(i*2).toString());
+		}
+		for(int i = 0; i < exp1.length; i++) {
+			exp1[i] = Integer.parseInt(list1.get(i*2+1).toString());
+		}
+		for(int i = 0; i < coef2.length; i++) {
+			coef2[i] = Integer.parseInt(list2.get(i*2).toString());
+		}
+		for(int i = 0; i < exp2.length; i++) {
+			exp2[i] = Integer.parseInt(list2.get(i*2+1).toString());
+		}
+		//</editor-fold>
+		int index = 0;
+		boolean action = false;
+		for(int i = 0; i < exp1.length; i++) {
+			if(exp1[i] == exp2[index]) {
+				sum.add((coef1[i]+coef2[index]));
+				sum.add((exp1[i]));
+				index++;
+			} else if(exp1[i] > exp2[index]) {
+				sum.add(coef1[i]);
+				sum.add(exp1[i]);
+			}
+			else if(exp1[i] < exp2[index]) {
+				sum.add(coef2[index]);
+				sum.add(exp2[index]);
+				i--;
+				index++;
+			}
+		}
+		while(index < 3) {
+			sum.add(coef2[index]);
+			sum.add(exp2[index]);
+			index++;
+		}
+		return sum;
 	}
+
 }
