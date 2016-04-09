@@ -19,8 +19,8 @@ public class PolynomialCalculator {
 		readFile(file);
 		//System.out.println(poly1);
 		//System.out.println(poly2);
-		printPoly(poly1);
-		printPoly(poly2);
+		System.out.println(printPoly(poly1));
+		System.out.println(printPoly(poly2));
 		addition();
 	}
 	private static void readFile(String fileName) {
@@ -72,24 +72,26 @@ public class PolynomialCalculator {
 			System.out.println("Please enter a valid file name and try again.");
 		}
 	}
-	private static void printPoly(LinkedList poly) {
+	private static String printPoly(LinkedList poly) {
+		StringBuilder printer = new StringBuilder();
 		for(int i = 0; i < poly.size(); i++) {
-			System.out.print(poly.get(i)+"x^");
+			//System.out.print(poly.get(i)+"x^");
+			printer.append(poly.get(i)+"x^");
 			i++;
 			if(i < poly.size()) {
-				System.out.print(poly.get(i));
+				printer.append(poly.get(i));
 			}
 			if(i+1 < poly.size()) {
 				if(Integer.parseInt(poly.get(i+1).toString()) > 0) {
-					System.out.print("+");
+					printer.append("+");
 				} else {
-					System.out.print("");
+					printer.append("");
 				}
 			}
 		}
-		System.out.println();
+		return printer.toString();
 	}
 	private static void addition() {
-
+		//int[] exp = new int[]
 	}
 }
