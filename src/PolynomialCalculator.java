@@ -13,11 +13,16 @@ public class PolynomialCalculator {
 	private static LinkedList poly2;
 	public static void main(String[] args) {
 		String file = args[0];
-		System.out.println(file);
+		//System.out.println(file);
 		poly1 = new LinkedList();
 		poly2 = new LinkedList();
+		readFile(file);
+		System.out.println(poly1);
+		System.out.println(poly2);
+	}
+	private static void readFile(String fileName) {
 		try {
-			Scanner polyFile = new Scanner(new File(file));
+			Scanner polyFile = new Scanner(new File(fileName));
 			while(polyFile.hasNext()) {
 				String line1;
 				String line2;
@@ -40,7 +45,7 @@ public class PolynomialCalculator {
 						num = 0;
 						isNeg = false;
 					}
-					System.out.println(poly1);
+					//System.out.println(poly1);
 				}
 				for(int i = line2.length()-1; i>=0; i--) {
 					if(Character.isDigit(line2.charAt(i))) {
@@ -56,7 +61,7 @@ public class PolynomialCalculator {
 						num = 0;
 						isNeg = false;
 					}
-					System.out.println(poly2);
+					//System.out.println(poly2);
 				}
 			}
 		} catch (FileNotFoundException e) {
