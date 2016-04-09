@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35dcb2bc-4aca-44a7-8795-c78a293c7d9b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Project3/PolynomialCalculator.class" afterPath="$PROJECT_DIR$/out/production/Project3/PolynomialCalculator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PolynomialCalculator.java" afterPath="$PROJECT_DIR$/src/PolynomialCalculator.java" />
     </list>
@@ -29,11 +30,10 @@
       <file leaf-file-name="PolynomialCalculator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PolynomialCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="213" column="45" selection-start-line="213" selection-start-column="45" selection-end-line="213" selection-end-column="45" />
+            <state relative-caret-position="423">
+              <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#readFile#0;class#PolynomialCalculator#0" expanded="false" />
                 <element signature="method#printPoly#0;class#PolynomialCalculator#0" expanded="false" />
                 <element signature="method#addition#0;class#PolynomialCalculator#0" expanded="false" />
                 <element signature="method#subtraction#0;class#PolynomialCalculator#0" expanded="false" />
@@ -656,7 +656,7 @@
       <updated>1460147229676</updated>
       <workItem from="1460147234040" duration="12655000" />
       <workItem from="1460163625779" duration="442000" />
-      <workItem from="1460240271135" duration="1710000" />
+      <workItem from="1460240271135" duration="1889000" />
     </task>
     <task id="LOCAL-00001" summary="starts java file">
       <created>1460148295260</created>
@@ -749,11 +749,18 @@
       <option name="project" value="LOCAL" />
       <updated>1460241744751</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="multiplies the two polynomials">
+      <created>1460242014648</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1460242014648</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14807000" />
+    <option name="totallyTimeSpent" value="14986000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -766,7 +773,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -798,7 +805,8 @@
     <MESSAGE value="adds  the subtraction method" />
     <MESSAGE value="cleans up some un-needed code" />
     <MESSAGE value="creates the mutliply method" />
-    <option name="LAST_COMMIT_MESSAGE" value="creates the mutliply method" />
+    <MESSAGE value="multiplies the two polynomials" />
+    <option name="LAST_COMMIT_MESSAGE" value="multiplies the two polynomials" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -815,7 +823,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFile#0;class#PolynomialCalculator#0" expanded="false" />
             <element signature="method#printPoly#0;class#PolynomialCalculator#0" expanded="false" />
             <element signature="method#addition#0;class#PolynomialCalculator#0" expanded="false" />
             <element signature="method#subtraction#0;class#PolynomialCalculator#0" expanded="false" />
@@ -839,7 +846,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFile#0;class#PolynomialCalculator#0" expanded="false" />
             <element signature="method#printPoly#0;class#PolynomialCalculator#0" expanded="false" />
             <element signature="method#addition#0;class#PolynomialCalculator#0" expanded="false" />
             <element signature="method#subtraction#0;class#PolynomialCalculator#0" expanded="false" />
@@ -874,11 +880,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PolynomialCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="213" column="45" selection-start-line="213" selection-start-column="45" selection-end-line="213" selection-end-column="45" />
+        <state relative-caret-position="423">
+          <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFile#0;class#PolynomialCalculator#0" expanded="false" />
             <element signature="method#printPoly#0;class#PolynomialCalculator#0" expanded="false" />
             <element signature="method#addition#0;class#PolynomialCalculator#0" expanded="false" />
             <element signature="method#subtraction#0;class#PolynomialCalculator#0" expanded="false" />

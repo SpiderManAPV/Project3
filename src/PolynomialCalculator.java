@@ -53,7 +53,7 @@ public class PolynomialCalculator {
 					//System.out.println(poly1);
 				}
 				if(poly1.size()%2 != 0) {
-					poly1.add(poly1.size()+1, 1);
+					poly1.add(poly1.size()+1, 0);
 				}
 				for(int i = line2.length()-1; i>=0; i--) {
 					if(Character.isDigit(line2.charAt(i))) {
