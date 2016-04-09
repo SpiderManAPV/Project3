@@ -3,8 +3,6 @@
 // Project 3
 // Polynomial Calculator
 
-import sun.awt.image.ImageWatched;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
@@ -166,7 +164,6 @@ public class PolynomialCalculator {
 		}
 		//</editor-fold>
 		int index = 0;
-		boolean action = false;
 		for(int i = 0; i < exp1.length; i++) {
 			if(exp1[i] == exp2[index]) {
 				dif.add((coef1[i]-coef2[index]));
