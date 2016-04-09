@@ -210,7 +210,8 @@ public class PolynomialCalculator {
 		//</editor-fold>
 		for(int i = 0; i < exp1.length; i++) {
 			for(int j = 0; j < exp2.length; j++) {
-
+				product.add(coef1[i]*coef2[j]);
+				product.add(exp1[i]+exp2[j]);
 			}
 		}
 		return product;
