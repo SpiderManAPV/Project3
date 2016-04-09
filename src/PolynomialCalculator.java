@@ -23,6 +23,7 @@ public class PolynomialCalculator {
 		System.out.println("Polynomial 2: "+printPoly(poly2));
 		System.out.println("Sum: "+printPoly(addition(poly1, poly2)));
 		System.out.println("Difference: "+printPoly(subtraction(poly1, poly2)));
+		System.out.println("Product: "+printPoly(multiply(poly1,poly2)));
 	}
 	private static void readFile(String fileName) {
 		try {
@@ -186,5 +187,32 @@ public class PolynomialCalculator {
 			index++;
 		}
 		return dif;
+	}
+	private static LinkedList multiply(LinkedList list1, LinkedList list2) {
+		LinkedList product = new LinkedList();
+		int[] exp1 = new int[list1.size()/2];
+		int[] coef1 = new int[list1.size()/2];
+		int[] exp2 = new int[list2.size()/2];
+		int[] coef2 = new int[list2.size()/2];
+		//<editor-fold desc="For loops to fill arrays">
+		for(int i = 0; i < coef1.length; i++) {
+			coef1[i] = Integer.parseInt(list1.get(i*2).toString());
+		}
+		for(int i = 0; i < exp1.length; i++) {
+			exp1[i] = Integer.parseInt(list1.get(i*2+1).toString());
+		}
+		for(int i = 0; i < coef2.length; i++) {
+			coef2[i] = Integer.parseInt(list2.get(i*2).toString());
+		}
+		for(int i = 0; i < exp2.length; i++) {
+			exp2[i] = Integer.parseInt(list2.get(i*2+1).toString());
+		}
+		//</editor-fold>
+		for(int i = 0; i < exp1.length; i++) {
+			for(int j = 0; j < exp2.length; j++) {
+
+			}
+		}
+		return product;
 	}
 }
