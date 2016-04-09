@@ -17,8 +17,11 @@ public class PolynomialCalculator {
 		poly1 = new LinkedList();
 		poly2 = new LinkedList();
 		readFile(file);
-		System.out.println(poly1);
-		System.out.println(poly2);
+		//System.out.println(poly1);
+		//System.out.println(poly2);
+		printPoly(poly1);
+		printPoly(poly2);
+		addition();
 	}
 	private static void readFile(String fileName) {
 		try {
@@ -68,6 +71,23 @@ public class PolynomialCalculator {
 			System.out.println("The file is not found.");
 			System.out.println("Please enter a valid file name and try again.");
 		}
+	}
+	private static void printPoly(LinkedList poly) {
+		for(int i = 0; i < poly.size(); i++) {
+			System.out.print(poly.get(i)+"x^");
+			i++;
+			if(i < poly.size()) {
+				System.out.print(poly.get(i));
+			}
+			if(i+1 < poly.size()) {
+				if(Integer.parseInt(poly.get(i+1).toString()) > 0) {
+					System.out.print("+");
+				} else {
+					System.out.print("");
+				}
+			}
+		}
+		System.out.println();
 	}
 	private static void addition() {
 
