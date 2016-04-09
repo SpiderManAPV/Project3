@@ -24,6 +24,7 @@ public class PolynomialCalculator {
 		System.out.println("Polynomial 1: "+printPoly(poly1));
 		System.out.println("Polynomial 2: "+printPoly(poly2));
 		System.out.println("Sum: "+printPoly(addition(poly1, poly2)));
+		System.out.println("Difference: "+printPoly(subtraction(poly1, poly2)));
 	}
 	private static void readFile(String fileName) {
 		try {
@@ -144,5 +145,49 @@ public class PolynomialCalculator {
 		}
 		return sum;
 	}
-
+	private static LinkedList subtraction (LinkedList list1, LinkedList list2) {
+		LinkedList dif = new LinkedList();
+		int[] exp1 = new int[list1.size()/2];
+		int[] coef1 = new int[list1.size()/2];
+		int[] exp2 = new int[list2.size()/2];
+		int[] coef2 = new int[list2.size()/2];
+		//<editor-fold desc="For loops to fill arrays">
+		for(int i = 0; i < coef1.length; i++) {
+			coef1[i] = Integer.parseInt(list1.get(i*2).toString());
+		}
+		for(int i = 0; i < exp1.length; i++) {
+			exp1[i] = Integer.parseInt(list1.get(i*2+1).toString());
+		}
+		for(int i = 0; i < coef2.length; i++) {
+			coef2[i] = Integer.parseInt(list2.get(i*2).toString());
+		}
+		for(int i = 0; i < exp2.length; i++) {
+			exp2[i] = Integer.parseInt(list2.get(i*2+1).toString());
+		}
+		//</editor-fold>
+		int index = 0;
+		boolean action = false;
+		for(int i = 0; i < exp1.length; i++) {
+			if(exp1[i] == exp2[index]) {
+				dif.add((coef1[i]-coef2[index]));
+				dif.add((exp1[i]));
+				index++;
+			} else if(exp1[i] > exp2[index]) {
+				dif.add(coef1[i]);
+				dif.add(exp1[i]);
+			}
+			else if(exp1[i] < exp2[index]) {
+				dif.add(coef2[index]*-1);
+				dif.add(exp2[index]);
+				i--;
+				index++;
+			}
+		}
+		while(index < 3) {
+			dif.add(coef2[index]*-1);
+			dif.add(exp2[index]);
+			index++;
+		}
+		return dif;
+	}
 }
