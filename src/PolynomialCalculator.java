@@ -69,4 +69,7 @@ public class PolynomialCalculator {
 			System.out.println("Please enter a valid file name and try again.");
 		}
 	}
+	private static void addition() {
+
+	}
 }
