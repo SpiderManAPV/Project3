@@ -262,23 +262,26 @@ public class PolynomialCalculator {
 	}
 	private static LinkedList derive(LinkedList list1, LinkedList list2) {
 		LinkedList der = multiply(list1, list2);
-		int[] exp = new int[list1.size()/2];
-		int[] coef = new int[list1.size()/2];
+		int[] exp = new int[der.size()/2];
+		int[] coef = new int[der.size()/2];
 		int count = 0;
 		//<editor-fold desc="For loops to fill arrays">
 		for(int i = 0; i < coef.length; i++) {
 			coef[i] = Integer.parseInt(der.get(i*2).toString());
+			//System.out.print(coef[i]+" ");
 		}
 		for(int i = 0; i < exp.length; i++) {
 			exp[i] = Integer.parseInt(der.get(i*2+1).toString());
+			//System.out.print(exp[i]+" ");
 		}
+		//System.out.println(coef);
+		//System.out.println(exp);
 		//</editor-fold>
 		der.clear();
 		for(int i = 0; i < exp.length; i++) {
 			der.add((coef[i]*exp[i]));
 			der.add(exp[i]-1);
 		}
-
 		return der;
 	}
 }
