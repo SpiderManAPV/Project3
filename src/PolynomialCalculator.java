@@ -21,9 +21,9 @@ public class PolynomialCalculator {
 		//System.out.println(poly2);
 		System.out.println("Polynomial 1: "+printPoly(poly1));
 		System.out.println("Polynomial 2: "+printPoly(poly2));
-		//System.out.println("Sum: "+printPoly(addition(poly1, poly2)));
+		System.out.println("Sum: "+printPoly(addition(poly1, poly2)));
 		System.out.println("Difference: "+printPoly(subtraction(poly1, poly2)));
-		/*System.out.println("Product: "+printPoly(*/multiply(poly1,poly2);
+		System.out.println("Product: "+printPoly(multiply(poly1,poly2)));
 	}
 	private static void readFile(String fileName) {
 		try {
@@ -122,9 +122,9 @@ public class PolynomialCalculator {
 		int index = 0;
 		int count = 0;
 		for(int i = 0; i < exp1.length; i++) {
-			System.out.println(i);
-			System.out.println("i: "+index);
-			System.out.println("l: "+exp2.length);
+			//System.out.println(i);
+			//System.out.println("i: "+index);
+			//System.out.println("l: "+exp2.length);
 			//System.out.println(printPoly(sum));
 			if(exp1[i] == exp2[index]) {
 				sum.add((coef1[i]+coef2[index]));
@@ -164,7 +164,7 @@ public class PolynomialCalculator {
 			sum.add(exp1[count]);
 			count++;
 		}
-		System.out.println("x: "+printPoly(sum));
+		//System.out.println("x: "+printPoly(sum));
 		return sum;
 	}
 	private static LinkedList subtraction (LinkedList list1, LinkedList list2) {
@@ -247,15 +247,14 @@ public class PolynomialCalculator {
 				}
 				//System.out.println("P: "+printPoly(product));
 			} else if(!product.equals(temp)) {
-				System.out.println("Temp: "+printPoly(temp));
-				System.out.println("Prod: "+printPoly(product));
-				temp2 = (addition(temp, product));
-				product = temp2;
+				//System.out.println("Temp: "+printPoly(temp));
+				//System.out.println("Prod: "+printPoly(product));
+				product = (addition(temp, product));
+				//product = temp2;
 				//temp2.clear();
 			}
 			//System.out.println("P: "+printPoly(temp2));
 		}
-
 		return product;
 	}
 }
