@@ -21,9 +21,9 @@ public class PolynomialCalculator {
 		//System.out.println(poly2);
 		System.out.println("Polynomial 1: "+printPoly(poly1));
 		System.out.println("Polynomial 2: "+printPoly(poly2));
-		System.out.println("Sum: "+printPoly(addition(poly1, poly2)));
+		//System.out.println("Sum: "+printPoly(addition(poly1, poly2)));
 		System.out.println("Difference: "+printPoly(subtraction(poly1, poly2)));
-		System.out.println("Product: "+printPoly(multiply(poly1,poly2)));
+		/*System.out.println("Product: "+printPoly(*/multiply(poly1,poly2);
 	}
 	private static void readFile(String fileName) {
 		try {
@@ -120,28 +120,51 @@ public class PolynomialCalculator {
 		}
 		//</editor-fold>
 		int index = 0;
-		boolean action = false;
+		int count = 0;
 		for(int i = 0; i < exp1.length; i++) {
+			System.out.println(i);
+			System.out.println("i: "+index);
+			System.out.println("l: "+exp2.length);
+			//System.out.println(printPoly(sum));
 			if(exp1[i] == exp2[index]) {
 				sum.add((coef1[i]+coef2[index]));
 				sum.add((exp1[i]));
 				index++;
+				if(index == exp2.length) {
+					//System.out.println("y");
+					i++;
+					count = i;
+					i = exp1.length;
+				}
 			} else if(exp1[i] > exp2[index]) {
 				sum.add(coef1[i]);
 				sum.add(exp1[i]);
-			}
-			else if(exp1[i] < exp2[index]) {
+			} else if(exp1[i] < exp2[index]) {
 				sum.add(coef2[index]);
 				sum.add(exp2[index]);
 				i--;
 				index++;
+				//System.out.println("check");
+				if(index == exp2.length) {
+					//System.out.println("y");
+					i++;
+					count = i;
+					i = exp1.length;
+				}
 			}
 		}
-		while(index < 3) {
+		while(index < exp2.length) {
 			sum.add(coef2[index]);
 			sum.add(exp2[index]);
 			index++;
 		}
+		while(count < exp1.length) {
+			//System.out.println(count);
+			sum.add(coef1[count]);
+			sum.add(exp1[count]);
+			count++;
+		}
+		System.out.println("x: "+printPoly(sum));
 		return sum;
 	}
 	private static LinkedList subtraction (LinkedList list1, LinkedList list2) {
@@ -209,11 +232,30 @@ public class PolynomialCalculator {
 		}
 		//</editor-fold>
 		for(int i = 0; i < exp1.length; i++) {
+			LinkedList temp = new LinkedList();
+			LinkedList temp2 = new LinkedList();
 			for(int j = 0; j < exp2.length; j++) {
-				product.add(coef1[i]*coef2[j]);
-				product.add(exp1[i]+exp2[j]);
+				temp.add(coef1[i]*coef2[j]);
+				temp.add(exp1[i]+exp2[j]);
+				//product.add(coef1[i]*coef2[j]);
+				//product.add(exp1[i]+exp2[j]);
 			}
+
+			if(i == 0) {
+				for(int j = 0; j < temp.size(); j++) {
+					product.add(temp.get(j));
+				}
+				//System.out.println("P: "+printPoly(product));
+			} else if(!product.equals(temp)) {
+				System.out.println("Temp: "+printPoly(temp));
+				System.out.println("Prod: "+printPoly(product));
+				temp2 = (addition(temp, product));
+				product = temp2;
+				//temp2.clear();
+			}
+			//System.out.println("P: "+printPoly(temp2));
 		}
+
 		return product;
 	}
 }
