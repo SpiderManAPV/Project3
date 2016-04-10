@@ -3,6 +3,8 @@
 // Project 3
 // Polynomial Calculator
 
+import sun.awt.image.ImageWatched;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
@@ -24,6 +26,7 @@ public class PolynomialCalculator {
 		System.out.println("Sum: "+printPoly(addition(poly1, poly2)));
 		System.out.println("Difference: "+printPoly(subtraction(poly1, poly2)));
 		System.out.println("Product: "+printPoly(multiply(poly1,poly2)));
+		System.out.println("Derivative: "+printPoly(derive(poly1,poly2)));
 	}
 	private static void readFile(String fileName) {
 		try {
@@ -256,5 +259,26 @@ public class PolynomialCalculator {
 			//System.out.println("P: "+printPoly(temp2));
 		}
 		return product;
+	}
+	private static LinkedList derive(LinkedList list1, LinkedList list2) {
+		LinkedList der = multiply(list1, list2);
+		int[] exp = new int[list1.size()/2];
+		int[] coef = new int[list1.size()/2];
+		int count = 0;
+		//<editor-fold desc="For loops to fill arrays">
+		for(int i = 0; i < coef.length; i++) {
+			coef[i] = Integer.parseInt(der.get(i*2).toString());
+		}
+		for(int i = 0; i < exp.length; i++) {
+			exp[i] = Integer.parseInt(der.get(i*2+1).toString());
+		}
+		//</editor-fold>
+		der.clear();
+		for(int i = 0; i < exp.length; i++) {
+			der.add((coef[i]*exp[i]));
+			der.add(exp[i]-1);
+		}
+
+		return der;
 	}
 }
